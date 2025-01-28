@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* General body styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+/* Container for the animation */
+.welcome-container {
+  text-align: center;
+  font-size: 40px;
+  color: #333;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeIn 2s forwards;
+}
+
+/* Animation for the text appearance */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Color-changing animation */
+@keyframes colorChange {
+  0% {
+    color: #FF6347;  /* Tomato Red */
+  }
+  25% {
+    color: #3CB371;  /* Medium Sea Green */
+  }
+  50% {
+    color: #1E90FF;  /* Dodger Blue */
+  }
+  75% {
+    color: #FFD700;  /* Gold */
+  }
+  100% {
+    color: #FF6347;  /* Tomato Red */
+  }
+}
+
+/* Apply color change to the text */
+.welcome-text {
+  display: inline-block;
+  animation: colorChange 5s infinite;
+}
+
+/* Animation for switching between languages */
+@keyframes textChange {
+  0%, 20% { content: 'Welcome'; }
+  20%, 40% { content: 'स्वागत छ'; } /* Nepali */
+  40%, 60% { content: 'स्वागत है'; } /* Hindi */
+  60%, 80% { content: 'ようこそ'; } /* Japanese */
+  80%, 100% { content: 'Willkommen'; } /* German */
+}
+
+.welcome-text span {
+  animation: textChange 20s infinite;
+  font-weight: bold;
+}
